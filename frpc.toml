@@ -1,0 +1,11 @@
+# 使用token鉴权
+auth.method = "token"
+auth.token = "your_token"
+
+# 转发ssh
+# [[proxies]] 
+# name = "ssh"
+# type = "tcp"
+# localIP = "120.0.0.1"
+# localPort = 22
+# remotePort = 2222

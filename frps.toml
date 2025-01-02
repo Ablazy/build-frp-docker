@@ -1,0 +1,12 @@
+# 服务端端口
+bindPort = 7000
+
+# 开启看板
+webServer.addr = "0.0.0.0"
+webServer.prot = 7500
+webServer.user = "admin"
+webServer.password = "password"
+
+# 使用token鉴权
+auth.method = "token"
+auth.token = "your_token"

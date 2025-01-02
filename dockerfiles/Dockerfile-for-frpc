@@ -9,6 +9,10 @@ FROM alpine:3
 
 RUN apk add --no-cache tzdata
 
+# 创建目录并复制配置文件
+RUN mkdir -p /frpc
+COPY frpc.toml /frpc/frpc.toml
+
 COPY --from=building /building/bin/frpc /usr/bin/frpc
 
-ENTRYPOINT ["/usr/bin/frpc"]
+ENTRYPOINT ["/usr/bin/frpc", "-c", "/frpc/frpc.toml"]

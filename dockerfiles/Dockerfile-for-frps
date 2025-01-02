@@ -9,6 +9,12 @@ FROM alpine:3
 
 RUN apk add --no-cache tzdata
 
+# 创建目标目录并复制配置文件
+RUN mkdir -p /frps
+COPY frps.toml /frps/frps.toml
+
+# 复制 frps 可执行文件
 COPY --from=building /building/bin/frps /usr/bin/frps
 
-ENTRYPOINT ["/usr/bin/frps"]
+# 正确设置 ENTRYPOINT
+ENTRYPOINT ["/usr/bin/frps", "-c", "/frps/frps.toml"]
