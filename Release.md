@@ -1,5 +1,5 @@
-### Features
+## Features
 
-* `tzdata` is installed by default in the container image, and the time zone can be set using the `TZ` environment variable.
-* The `quic-bind-port` command line parameter is supported in frps, which specifies the port for accepting frpc connections using the QUIC protocol.
-* The vhost HTTP proxy of frps supports the h2c protocol.
+* Add NAT traversal configuration options for XTCP proxies and visitors. Support disabling assisted addresses to avoid using slow VPN connections during NAT hole punching.
+* Enhanced OIDC client configuration with support for custom TLS certificate verification and proxy settings. Added `trustedCaFile`, `insecureSkipVerify`, and `proxyURL` options for OIDC token endpoint connections.
+* Added detailed Prometheus metrics with `proxy_counts_detailed` metric that includes both proxy type and proxy name labels, enabling monitoring of individual proxy connections instead of just aggregate counts.
